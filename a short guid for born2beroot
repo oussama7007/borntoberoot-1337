@@ -1,0 +1,121 @@
+a comprehensive guide for the Born2beroot project, including what you need to know to master it and pass the evaluation:
+
+Virtual Machine Setup
+
+Understanding virtualization concepts
+Installing and configuring VirtualBox/VMware
+Creating and configuring a virtual machine
+Installing Debian/CentOS (Debian is recommended for beginners)
+Understanding partitioning with LVM
+Setting up encrypted partitions
+System Administration
+
+Basic Linux commands and navigation
+User and group management
+Password policy implementation (using libpam-pwquality)
+Sudo configuration and usage
+SSH configuration (Port 4242)
+UFW (Uncomplicated Firewall) setup
+Hostname and partition management
+System updates and package management
+Security Requirements
+
+Strong password policy including:
+Expires every 30 days
+Minimum 10 characters
+Must contain uppercase, lowercase, and numbers
+No more than 3 consecutive identical characters
+Must not include username
+At least 7 characters not part of old password
+Sudo configuration requirements:
+Maximum 3 attempts for incorrect password
+Custom error message
+Archive sudo commands in /var/log/sudo/
+TTY mode enabled
+Secure paths for sudo
+Network Configuration
+
+Understanding IP addressing
+Network adapter setup
+SSH server configuration
+UFW rules implementation
+Port management (especially port 4242 for SSH)
+Monitoring Script (monitoring.sh)
+
+Must display on all terminals every 10 minutes
+Must show:
+Architecture and kernel version
+Number of physical and virtual processors
+Current RAM usage
+Current disk usage
+Current CPU load
+Last reboot date/time
+LVM usage status
+Number of active connections
+Number of users
+IPv4 address and MAC address
+Number of sudo commands executed
+Evaluation Sheet Requirements
+
+Signature.txt file with VM signature
+Correct OS installation (Debian or CentOS)
+User groups and sudo configuration
+UFW active and configured
+SSH service running on port 4242
+Password policy implementation
+Hostname format (username42)
+Functional monitoring script
+Proper partitioning with LVM
+WordPress website with lighttpd/PHP/MariaDB (bonus)
+Additional service of your choice (bonus)
+Common Commands to Master
+
+bash--------------------------------
+# User Management
+adduser, usermod, groupadd, passwd
+
+# System Information
+uname, lsblk, dpkg -l, apt-get
+
+# Network
+ssh, ufw status, ufw allow
+
+# Monitoring
+top, free, df, w, who, last
+----------------------------------------
+# Services
+systemctl status, service status
+Evaluation Defense Preparation
+
+Understand the difference between apt and aptitude
+Know what AppArmor is and its purpose
+Explain LVM and its advantages
+Demonstrate how to:
+Create/delete users
+Create groups and assign users
+Change hostname
+View partition tables
+Check service status
+Use and configure sudo
+Implement/modify password policies
+Configure SSH and UFW
+Bonus Tasks
+
+Setting up WordPress website
+Additional service implementation
+Proper partition setup
+Documentation Requirements
+
+Keep notes of all commands used
+Document configuration file changes
+Create backup procedures
+Maintain installation guide
+Tips for Evaluation:
+
+***Test all commands and configurations before evaluation
+Ensure monitoring script works perfectly
+Be able to explain every aspect of your configuration
+Have backups of important configuration files
+Practice common tasks multiple times
+Understand the security implications of each configuration
+Be prepared to modify system settings during evaluation
